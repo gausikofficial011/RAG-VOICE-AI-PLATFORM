@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-dark: #090d16;
+  --bg-card: rgba(17, 24, 39, 0.7);
+  --bg-card-hover: rgba(30, 41, 59, 0.8);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: #6366f1;
+  --primary: #6366f1;
+  --primary-glow: rgba(99, 102, 241, 0.35);
+  --secondary: #06b6d4;
+  --secondary-glow: rgba(6, 182, 212, 0.3);
+  --accent-pink: #ec4899;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.03) 0%, transparent 50%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism Containers */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.glass-input {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.glass-input:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* Modern Gradient Button */
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px var(--primary-glow);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(30, 41, 59, 0.7);
+  color: #cbd5e1;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background: rgba(51, 65, 85, 0.8);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Voice Orb Animations */
+@keyframes orb-pulse-idle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3), inset 0 0 20px rgba(99, 102, 241, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(99, 102, 241, 0.5), inset 0 0 35px rgba(99, 102, 241, 0.3);
+  }
+}
+
+@keyframes orb-listening {
+  0%, 100% {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.5), 0 0 80px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    transform: scale(1.18);
+    box-shadow: 0 0 70px rgba(236, 72, 153, 0.8), 0 0 120px rgba(99, 102, 241, 0.6);
+  }
+}
+
+@keyframes orb-speaking {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.12) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+.voice-orb {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.voice-orb.idle {
+  background: radial-gradient(circle at 35% 35%, #818cf8, #4338ca 60%, #1e1b4b);
+  animation: orb-pulse-idle 3.5s infinite ease-in-out;
+}
+
+.voice-orb.listening {
+  background: radial-gradient(circle at 35% 35%, #f472b6, #db2777 60%, #4c0519);
+  animation: orb-listening 1.4s infinite ease-in-out;
+}
+
+.voice-orb.processing, .voice-orb.thinking {
+  background: radial-gradient(circle at 35% 35%, #22d3ee, #0891b2 60%, #083344);
+  animation: orb-pulse-idle 1.2s infinite ease-in-out;
+}
+
+.voice-orb.speaking {
+  background: radial-gradient(circle at 35% 35%, #a855f7, #7e22ce 60%, #3b0764);
+  box-shadow: 0 0 60px rgba(168, 85, 247, 0.6);
+  animation: orb-speaking 4s infinite linear;
+}
+
+/* Audio Waveform Bars */
+.wave-bar {
+  width: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(to top, #6366f1, #06b6d4);
+  transition: height 0.1s ease;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
+}
+
+/* ==========================================================================
+   Apple "Hey Siri" & Apple Intelligence Desktop Visual System
+   ========================================================================== */
+
+/* Full-Screen Apple Intelligence Perimeter Glow (iOS 18 / macOS Sequoia style) */
+@keyframes siri-perimeter-breathe {
+  0%, 100% {
+    opacity: 0.82;
+    filter: blur(28px) drop-shadow(0 0 45px rgba(236, 72, 153, 0.6));
+  }
+  50% {
+    opacity: 1;
+    filter: blur(36px) drop-shadow(0 0 75px rgba(56, 189, 248, 0.9));
+  }
+}
+
+@keyframes siri-perimeter-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.siri-screen-perimeter-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border: 4px solid transparent;
+  border-image: linear-gradient(
+    135deg,
+    #38bdf8 0%,
+    #818cf8 20%,
+    #c084fc 40%,
+    #f472b6 60%,
+    #fb7185 80%,
+    #38bdf8 100%
+  ) 1;
+  background: transparent;
+  box-shadow:
+    inset 0 0 60px 15px rgba(192, 132, 252, 0.25),
+    inset 0 0 120px 30px rgba(56, 189, 248, 0.2),
+    inset 0 0 180px 45px rgba(244, 114, 182, 0.15);
+  animation: siri-perimeter-breathe 2.4s infinite ease-in-out;
+}
+
+/* Photorealistic Apple Siri Fluid Orb */
+@keyframes siri-conic-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes siri-conic-spin-reverse {
+  0% { transform: rotate(360deg) scale(0.95); }
+  50% { transform: rotate(180deg) scale(1.05); }
+  100% { transform: rotate(0deg) scale(0.95); }
+}
+
+@keyframes siri-pulse-breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 50px rgba(129, 140, 248, 0.4), inset 0 0 30px rgba(56, 189, 248, 0.3);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 85px rgba(244, 114, 182, 0.6), inset 0 0 45px rgba(192, 132, 252, 0.5);
+  }
+}
+
+@keyframes siri-listening-expand {
+  0%, 100% {
+    transform: scale(1.04);
+    box-shadow: 0 0 70px rgba(244, 114, 182, 0.7), 0 0 140px rgba(56, 189, 248, 0.5);
+  }
+  50% {
+    transform: scale(1.18);
+    box-shadow: 0 0 100px rgba(251, 113, 133, 0.9), 0 0 180px rgba(129, 140, 248, 0.7);
+  }
+}
+
+@keyframes siri-thinking-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+    box-shadow: 0 0 80px rgba(56, 189, 248, 0.8), inset 0 0 40px rgba(244, 114, 182, 0.6);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.12);
+    box-shadow: 0 0 110px rgba(192, 132, 252, 0.9), inset 0 0 60px rgba(56, 189, 248, 0.8);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    box-shadow: 0 0 80px rgba(56, 189, 248, 0.8), inset 0 0 40px rgba(244, 114, 182, 0.6);
+  }
+}
+
+@keyframes siri-speaking-wave {
+  0%, 100% {
+    transform: scale(1.08) rotate(0deg);
+    box-shadow: 0 0 90px rgba(168, 85, 247, 0.8), 0 0 150px rgba(56, 189, 248, 0.6);
+  }
+  50% {
+    transform: scale(1.22) rotate(180deg);
+    box-shadow: 0 0 130px rgba(236, 72, 153, 0.9), 0 0 200px rgba(129, 140, 248, 0.7);
+  }
+}
+
+.siri-orb-wrapper {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.siri-orb-wrapper:hover {
+  transform: scale(1.04);
+}
+
+.siri-orb-outer-glow {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  filter: blur(24px);
+  opacity: 0.8;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.6) 0%, rgba(244, 114, 182, 0.4) 50%, transparent 70%);
+  transition: all 0.3s ease;
+}
+
+.siri-orb-core {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.8),
+    inset 0 0 25px rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Layer 1: Swirling Conic Iridescent Plasma */
+.siri-plasma-layer {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #06b6d4 0deg,
+    #3b82f6 60deg,
+    #8b5cf6 120deg,
+    #ec4899 180deg,
+    #f43f5e 240deg,
+    #10b981 300deg,
+    #06b6d4 360deg
+  );
+  filter: blur(14px) contrast(140%);
+  animation: siri-conic-spin 8s linear infinite;
+}
+
+/* Layer 2: Counter-Rotating Secondary Nebula */
+.siri-nebula-layer {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 180deg,
+    #f472b6 0deg,
+    #38bdf8 90deg,
+    #c084fc 180deg,
+    #34d399 270deg,
+    #f472b6 360deg
+  );
+  filter: blur(18px);
+  mix-blend-mode: color-dodge;
+  animation: siri-conic-spin-reverse 6s linear infinite;
+  opacity: 0.85;
+}
+
+/* Layer 3: Glass Specular Top Highlight */
+.siri-specular-glass {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 25%,
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(255, 255, 255, 0.2) 28%,
+    transparent 65%
+  );
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Layer 4: Deep Core Vignette */
+.siri-vignette {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.65);
+  z-index: 3;
+}
+
+/* State Modifiers */
+.siri-orb-wrapper.idle .siri-orb-core {
+  animation: siri-pulse-breathe 4s infinite ease-in-out;
+}
+
+.siri-orb-wrapper.listening .siri-orb-core {
+  animation: siri-listening-expand 1.4s infinite ease-in-out;
+}
+.siri-orb-wrapper.listening .siri-plasma-layer {
+  animation-duration: 3s;
+  filter: blur(10px) contrast(170%);
+}
+
+.siri-orb-wrapper.processing .siri-orb-core,
+.siri-orb-wrapper.thinking .siri-orb-core {
+  animation: siri-thinking-spin 2s infinite linear;
+}
+.siri-orb-wrapper.processing .siri-plasma-layer,
+.siri-orb-wrapper.thinking .siri-plasma-layer {
+  animation-duration: 1.8s;
+  filter: blur(8px) contrast(200%);
+}
+
+.siri-orb-wrapper.speaking .siri-orb-core {
+  animation: siri-speaking-wave 2.2s infinite ease-in-out;
+}
+.siri-orb-wrapper.speaking .siri-plasma-layer {
+  animation-duration: 2.5s;
+}
+
+/* Apple Fluid Voice Waveform Ribbon */
+.siri-fluid-waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 48px;
+  padding: 0 16px;
+}
+
+.siri-wave-strand {
+  width: 5px;
+  border-radius: 9999px;
+  transition: height 0.08s ease-out;
+  box-shadow: 0 0 12px currentColor;
+}
+
+/* Floating Laptop Siri Overlay (macOS / iPadOS Style Floating Assistant) */
+.siri-floating-overlay {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 380px;
+  max-width: calc(100vw - 48px);
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 28px;
+  box-shadow: 
+    0 24px 60px -12px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(129, 140, 248, 0.25);
+  z-index: 9998;
+  overflow: hidden;
+  animation: siri-popup-scale 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes siri-popup-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

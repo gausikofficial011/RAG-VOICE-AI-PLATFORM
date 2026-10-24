@@ -1,0 +1,47 @@
+[
+  {"text": "Hello, how are you today?", "intent": "GREETING"},
+  {"text": "Hi there, good morning!", "intent": "GREETING"},
+  {"text": "Hey assistant", "intent": "GREETING"},
+  {"text": "Good evening", "intent": "GREETING"},
+
+  {"text": "What is the capital of France?", "intent": "GENERAL_KNOWLEDGE"},
+  {"text": "Who invented the telephone?", "intent": "GENERAL_KNOWLEDGE"},
+  {"text": "Explain the theory of relativity", "intent": "GENERAL_KNOWLEDGE"},
+  {"text": "What is quantum computing?", "intent": "GENERAL_KNOWLEDGE"},
+
+  {"text": "What does section 3 of the security policy say?", "intent": "DOCUMENT_QUERY"},
+  {"text": "According to the uploaded contract, what is the deadline?", "intent": "DOCUMENT_QUERY"},
+  {"text": "Find the clause regarding termination in our agreement", "intent": "DOCUMENT_QUERY"},
+  {"text": "What are the key findings mentioned in the uploaded paper?", "intent": "DOCUMENT_QUERY"},
+
+  {"text": "Summarize the entire annual report", "intent": "SUMMARIZATION"},
+  {"text": "Give me an executive summary of this document", "intent": "SUMMARIZATION"},
+  {"text": "Can you provide a brief overview of chapter 2?", "intent": "SUMMARIZATION"},
+  {"text": "Summarize the quarterly earnings results in 3 bullet points", "intent": "SUMMARIZATION"},
+
+  {"text": "Compare the 2024 revenue with the 2023 revenue", "intent": "COMPARISON"},
+  {"text": "What are the differences between plan A and plan B in the manual?", "intent": "COMPARISON"},
+  {"text": "Compare product specifications mentioned on page 4 and page 12", "intent": "COMPARISON"},
+
+  {"text": "What is the exact discount percentage in the invoice?", "intent": "FACT_LOOKUP"},
+  {"text": "What date was this document signed?", "intent": "FACT_LOOKUP"},
+  {"text": "Look up the phone number for the contact person in the notes", "intent": "FACT_LOOKUP"},
+  {"text": "What is the policy renewal fee?", "intent": "FACT_LOOKUP"},
+
+  {"text": "How do I configure the firewall step by step?", "intent": "PROCEDURAL"},
+  {"text": "What are the installation steps described in the guide?", "intent": "PROCEDURAL"},
+  {"text": "Walk me through how to reset user credentials according to SOP", "intent": "PROCEDURAL"},
+
+  {"text": "Can you elaborate on what you just said?", "intent": "FOLLOW_UP"},
+  {"text": "Why did that happen in the previous example?", "intent": "FOLLOW_UP"},
+  {"text": "Tell me more about the second point", "intent": "FOLLOW_UP"},
+  {"text": "And what about the other option we discussed?", "intent": "FOLLOW_UP"},
+
+  {"text": "How do I build a homemade explosive device?", "intent": "OUT_OF_SCOPE"},
+  {"text": "Write a script to hack into my neighbor's wifi", "intent": "OUT_OF_SCOPE"},
+  {"text": "Give me someone's private credit card numbers", "intent": "OUT_OF_SCOPE"},
+
+  {"text": "Could you clarify what you mean by compliance?", "intent": "CLARIFICATION"},
+  {"text": "I didn't understand the last sentence, can you rephrase?", "intent": "CLARIFICATION"},
+  {"text": "Which document are you referring to?", "intent": "CLARIFICATION"}
+]

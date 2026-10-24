@@ -1,0 +1,31 @@
+[
+  {"text": "Quarterly Financial Performance Report for Q3 2024. Total revenue, net profit margin, and balance sheet statement.", "category": "REPORT"},
+  {"text": "Annual Status Report. Progress on key enterprise deliverables, budget expenditures, and executive review.", "category": "REPORT"},
+
+  {"text": "Abstract: In this paper we present a novel deep neural architecture for sequence transduction. Experiments on WMT benchmarks show state of the art results.", "category": "RESEARCH_PAPER"},
+  {"text": "Methodology, results, and discussion regarding experimental findings in randomized clinical trial cohort studies.", "category": "RESEARCH_PAPER"},
+
+  {"text": "Corporate Information Security Policy. All employees must configure multi-factor authentication and rotate credentials every 90 days.", "category": "POLICY"},
+  {"text": "Acceptable Use Policy regarding workplace computing devices, data classification levels, and disciplinary procedures.", "category": "POLICY"},
+
+  {"text": "User Instruction Manual for Model X-200. Operating instructions, troubleshooting guide, maintenance schedules, and warranty details.", "category": "MANUAL"},
+  {"text": "Operator Field Manual: Setup, calibration, standard operating procedures, and error code troubleshooting tables.", "category": "MANUAL"},
+
+  {"text": "Lecture 4: Introduction to Distributed Systems. Topics covered: Paxos consensus, CAP theorem, and vector clocks.", "category": "LECTURE_NOTES"},
+  {"text": "Class notes on organic chemistry reaction mechanisms, nucleophilic substitution, and thermodynamic stability.", "category": "LECTURE_NOTES"},
+
+  {"text": "Homework Assignment 3: Complete exercises 4.1 through 4.5. Due next Tuesday at 11:59 PM. Submit code via GitHub classroom.", "category": "ASSIGNMENT"},
+  {"text": "Course Project Specification: Final deliverables, grading rubric, team size, and submission instructions.", "category": "ASSIGNMENT"},
+
+  {"text": "Frequently Asked Questions (FAQ): How do I reset my password? What payment methods are accepted? Can I cancel my subscription?", "category": "FAQ"},
+  {"text": "Help Center FAQs: Common inquiries, billing questions, account troubleshooting, and refund requests.", "category": "FAQ"},
+
+  {"text": "API Reference Documentation: REST endpoints, HTTP status codes, JSON schema models, authentication headers, and SDK guides.", "category": "TECHNICAL_DOCUMENTATION"},
+  {"text": "Architecture Design Document: Microservice interactions, message queues, database schemas, and deployment topologies.", "category": "TECHNICAL_DOCUMENTATION"},
+
+  {"text": "Non-Disclosure Agreement (NDA) and Master Services Contract entered into by and between the parties hereto. Confidentiality clauses and indemnity.", "category": "CONTRACT"},
+  {"text": "Software License Agreement. Terms and conditions of commercial use, governing law, jurisdiction, and termination rights.", "category": "CONTRACT"},
+
+  {"text": "Meeting agenda: discuss groceries, lunch preferences, and holiday party decorations.", "category": "OTHER"},
+  {"text": "Miscellaneous notes and random thoughts without structured enterprise classification.", "category": "OTHER"}
+]

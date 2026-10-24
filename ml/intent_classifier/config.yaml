@@ -1,0 +1,25 @@
+model_name: "query_intent_classifier"
+version: "v1.0.0"
+model_type: "INTENT"
+dataset_path: "ml/datasets/intent_dataset.json"
+artifact_path: "ml/artifacts/intent_classifier.joblib"
+metrics_path: "ml/artifacts/intent_classifier_metrics.json"
+
+hyperparameters:
+  classifier: "LogisticRegression"
+  ngram_range: [1, 2]
+  max_features: 5000
+  C: 1.0
+  max_iter: 500
+
+classes:
+  - "GENERAL_KNOWLEDGE"
+  - "DOCUMENT_QUERY"
+  - "SUMMARIZATION"
+  - "COMPARISON"
+  - "FACT_LOOKUP"
+  - "PROCEDURAL"
+  - "FOLLOW_UP"
+  - "OUT_OF_SCOPE"
+  - "GREETING"
+  - "CLARIFICATION"
